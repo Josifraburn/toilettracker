@@ -14,13 +14,19 @@ main {
   background-size: cover;
 }
 
+.circle-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
 .circle {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 2;
 }
 
@@ -38,12 +44,16 @@ main {
   box-shadow: 0px 0px 0px 2000px #B7DBE5;
 }
 
-.toilet-logo {
+.circle.animating {
+  transition: all ease .8s ;
+  transform: scale(10);
+}
+
+.logo-img {
   position: absolute;
   height: 20vw;
   width: 20vw;
   border-radius: 100%;
-  background-color: #B7DBE5;
   z-index: 2;
   top: 50%;
   left: 50%;
@@ -55,4 +65,37 @@ main {
   -webkit-box-shadow: 0px 7px 25px 0px rgba(50, 50, 50, 0.59);
   -moz-box-shadow:    0px 7px 25px 0px rgba(50, 50, 50, 0.59);
   box-shadow:         0px 7px 25px 0px rgba(50, 50, 50, 0.59);
+  background-color: #B7DBE5;
+  background: rgba(225,225,225,.7);
 }
+
+  .logo-img.animated {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes slideInDown {
+    0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+    }
+    @keyframes slideInDown {
+    0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+  }
