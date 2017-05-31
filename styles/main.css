@@ -45,7 +45,7 @@ main {
 }
 
 .circle.animating {
-  transition: all ease .8s ;
+  transition: all ease 2s ;
   transform: scale(10);
 }
 
@@ -62,6 +62,7 @@ main {
   min-width: 170px;
   min-height: 170px;
   transform: translate(-50%, -50%);
+  transform-origin: center left;
   -webkit-box-shadow: 0px 7px 25px 0px rgba(50, 50, 50, 0.59);
   -moz-box-shadow:    0px 7px 25px 0px rgba(50, 50, 50, 0.59);
   box-shadow:         0px 7px 25px 0px rgba(50, 50, 50, 0.59);
@@ -70,32 +71,12 @@ main {
 }
 
   .logo-img.animated {
-    -webkit-animation-name: slideInDown;
-    animation-name: slideInDown;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    }
-    @-webkit-keyframes slideInDown {
-    0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    visibility: visible;
-    }
-    100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    }
-    }
-    @keyframes slideInDown {
-    0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    visibility: visible;
-    }
-    100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    }
+    animation-name: logo-animation;
+    animation-duration: .8s;
+    animation-fill-mode:forwards;
+  }
+
+  @keyframes logo-animation {
+    0% {transform: scale(1) translate(-50%, -50%);}
+    100% {transform: scale(.6) translate(-50%,40vh)}
   }
